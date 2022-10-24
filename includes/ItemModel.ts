@@ -56,7 +56,10 @@ export function loadItemModel(path: string): ItemModel {
 }
 
 export function saveItemModel(filePath: string, model: ItemModel) {
-	const json = JSON.stringify(model);
+	const json = JSON.stringify(model)
+		.replace(/\[\n\t+(-?\d)/g, "[$1")
+		.replace(/,\n\t+(-?\d)/g, ", $1")
+		.replace(/(\d)\n\t+]/g, "$1]");
 	// Create directory if it doesn't exist
 	const outputDir = path.dirname(filePath);
 	if (!fs.existsSync(outputDir)) {

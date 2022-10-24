@@ -49,13 +49,6 @@
 			"id": "bottom",
 			"invertAxis": "xy",
 			"translate": [1, -3, 0],
-			"submodels": [
-				{
-					"id": "bone",
-					"invertAxis": "xy",
-					"translate": [18.08, 0, -0.58]
-				}
-			],
 			"animations": [
 				{
 					"this.ry": 0,

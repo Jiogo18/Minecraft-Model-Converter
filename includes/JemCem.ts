@@ -36,7 +36,10 @@ export function loadJem(path: string): JemEntityModel {
 }
 
 export function saveJem(model: JemEntityModel, filePath: string) {
-	const json = JSON.stringify(model, null, "\t");
+	const json = JSON.stringify(model, null, "\t")
+		.replace(/\[\n\t+(-?\d)/g, "[$1")
+		.replace(/,\n\t+(-?\d)/g, ", $1")
+		.replace(/(\d)\n\t+]/g, "$1]");
 	// Create directory if it doesn't exist
 	const outputDir = path.dirname(filePath);
 	if (!fs.existsSync(outputDir)) {

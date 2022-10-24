@@ -14,15 +14,15 @@ export default function main(inputName: string, outputName: string) {
 	const itemModel: ItemModel = loadItemModel(inputName);
 
 	const textureOutput = "bateau.png";
-	const textureSize: [number, number] = [966, 1000];
+	const textureSize: [number, number] = [642, 483];
 	const texturesUVs = {
-		"#2": [32, 0, 32, 32], // fer_bateau
-		"#3": [64, 0, 32, 32], // fer_moteur
-		"#4": [0, 32, 966, 968], // tete_de_tigre
-		"#5": [128, 0, 32, 32], // loupiotte
-		"#6": [0, 0, 32, 32], // green_wool
-		"#7": [96, 0, 32, 32], // orange_wool
-		"#8": [160, 0, 32, 32], // transparent
+		"#2": [32, 64, 32, 32], // fer_bateau
+		"#3": [64, 64, 32, 32], // fer_moteur
+		"#4": [160, 0, 482, 483], // tete_de_tigre
+		"#5": [128, 64, 32, 32], // loupiotte
+		"#6": [0, 64, 32, 32], // green_wool
+		"#7": [96, 64, 32, 32], // orange_wool
+		"#8": [0, 128, 32, 32], // transparent
 	}
 	function getTextureUV(textureData: {
 		uv: UV;
